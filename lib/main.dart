@@ -4,6 +4,10 @@ void main() {
   runApp(BaseApp());
 }
 
+void buttonPressed() {
+  print("button pressed");
+}
+
 class BaseApp extends StatelessWidget {
   @override
   Widget build(BuildContext buildContext) {
@@ -11,6 +15,15 @@ class BaseApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text("Appbar title"),
+        ),
+        body: Column(
+          children: [
+            Text("something"),
+            RaisedButton(
+              child: Text("blah"),
+              onPressed: buttonPressed,
+            )
+          ],
         ),
         backgroundColor: Colors.white,
       ),

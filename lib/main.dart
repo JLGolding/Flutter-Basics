@@ -22,7 +22,10 @@ class BaseApp extends StatelessWidget {
             RaisedButton(
               child: Text("blah"),
               onPressed: buttonPressed,
-            )
+            ),
+            RaisedButton(
+              onPressed: () => print("other button pressed"),
+            ),
           ],
         ),
         backgroundColor: Colors.white,

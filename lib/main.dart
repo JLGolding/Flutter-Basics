@@ -7,7 +7,6 @@ void main() {
 class BaseApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return BaseAppState();
   }
 }
@@ -16,8 +15,11 @@ class BaseAppState extends State<BaseApp> {
   var textIndex = 0;
 
   void buttonPressed() {
-    textIndex = textIndex + 1;
+    setState(() {
+      textIndex = textIndex + 1;
+    });
     print("button pressed");
+    print(textIndex);
   }
 
   @override

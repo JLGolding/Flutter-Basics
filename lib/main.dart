@@ -4,13 +4,25 @@ void main() {
   runApp(BaseApp());
 }
 
-void buttonPressed() {
-  print("button pressed");
+class BaseApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return BaseAppState();
+  }
 }
 
-class BaseApp extends StatelessWidget {
+class BaseAppState extends State<BaseApp> {
+  var textIndex = 0;
+
+  void buttonPressed() {
+    textIndex = textIndex + 1;
+    print("button pressed");
+  }
+
   @override
   Widget build(BuildContext buildContext) {
+    var buttonText = ["blsh", "psh"];
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -20,10 +32,11 @@ class BaseApp extends StatelessWidget {
           children: [
             Text("something"),
             RaisedButton(
-              child: Text("blah"),
+              child: Text(buttonText[textIndex]),
               onPressed: buttonPressed,
             ),
             RaisedButton(
+              child: Text("boo"),
               onPressed: () => print("other button pressed"),
             ),
           ],

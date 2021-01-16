@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './question.dart';
+
 void main() {
   runApp(BaseApp());
 }
@@ -13,6 +15,8 @@ class BaseApp extends StatefulWidget {
 
 class BaseAppState extends State<BaseApp> {
   var textIndex = 0;
+
+  var questions = ["what is this?", "how about you?"];
 
   void buttonPressed() {
     setState(() {
@@ -32,7 +36,7 @@ class BaseAppState extends State<BaseApp> {
         ),
         body: Column(
           children: [
-            Text("something"),
+            Question(questions[textIndex]),
             RaisedButton(
               child: Text(buttonText[textIndex]),
               onPressed: buttonPressed,
